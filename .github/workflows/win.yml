@@ -139,6 +139,8 @@ jobs:
           rm -f $HOME/dependencies-win-${{ matrix.arch }}/lib/*.a
       - name: Build cURL
         run: |
+          sudo apt-get update
+          sudo apt-get install brotli zstd libidn2 libpsl
           cd src/curl
           mkdir build
           cd build
